@@ -20,11 +20,13 @@ a:hover { text-decoration: underline; }
 /** @group core layout **/
 #wrapper { padding: 20px 40px; padding-top: 35px; min-width: 260px; max-width: 1000px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; -webkit-border-bottom-left-radius: 8px; -webkit-border-bottom-right-radius: 8px; -moz-border-radius-bottomleft: 8px; -moz-border-radius-bottomright: 8px; margin: auto;}
 
+#left { float: left; width: 300px; }
+#right { float: right; width: 700px; }
 header { width: 100%; }
 
 /** @group personal settings **/
 #info { float: left; margin-bottom: 12px; }
-#photo { float: right; }
+#photo { /*float: left;*/ }
 #photo img { 
 -webkit-border-radius: 3px;
 -moz-border-radius: 3px;
