@@ -9,7 +9,7 @@ h3 { font-family: "Trebuchet MS", Verdana, Arial, sans-serif; color: #67b7f0; fo
 h4 { font-family: "Trebuchet MS", Verdana, Arial, sans-serif; color: #67b7f0; font-weight: bold; font-size: 1.6em; margin-bottom: 4px; }
 
 p { font-family: "Rosario", serif; color: #C2C2C2; font-size: 1.5em; line-height: 1.4em; margin-bottom: 15px; padding-left: 35px; }
-small { font-family: "Rosario", serif; color: #C2C2C2; font-size: 1.3em; display: block; margin-bottom: 6px; }
+small { font-family: "Rosario", serif; color: #C2C2C2; font-size: 1.3em; display: inline-block; margin-bottom: 6px; }
 ul { display: block; list-style: none; }
 ul li { padding-left: 45px; list-style-type: none; vertical-align: top; background: url('../images/icons/bullet.png') 25px 5px no-repeat; margin-bottom: 5px; font-family: "Rosario", serif; color: #C2C2C2; font-size: 1.4em; line-height: 2.0em; }
 
@@ -29,12 +29,12 @@ header { width: 100%; }
 
 /** @group personal settings **/
 #info { float: left; margin-bottom: 12px; }
-#photo { /*float: left;*/ }
+/*#photo { float: left;}*/
 #photo-border {
 background: #fff;
-display: inline;
-float: left;
-margin: 10px 27px 27px 34px;
+display: block;
+/* float: left; */
+/* margin: 10px 27px 27px 34px; */
 width: 150px;
 padding: 10px 10px 5px;
 text-align: center;
@@ -43,6 +43,7 @@ text-decoration: none;
 color: #333;
 font-size: 18px;
 -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+margin: 15px auto 25px;
 }
 #photo-border:after { content: attr(title); font-family: 'Shadows Into Light', cursive; font-weight: bold; font-size: 1.5em; }
 

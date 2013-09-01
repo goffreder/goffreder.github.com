@@ -5,14 +5,16 @@
 	h2 { display: block; text-align: center; }
 	small { font-size: 1.2em; }
 	#info { float: none; display: block; text-align: center; }
-	#left { width: inherit; border-left: 2px dashed #67b7f0; }
-	#right { width: inherit; }
+	#left { width: inherit; }
+	#right { width: inherit; border-left: 0px; }
 	#photo {
 		float: none;
 		display: block;
 		text-align: center;
+	
 	}
-	#w { padding: 20px 15px; }
+	#wrapper { padding: 20px 0px; }
+	#footer { height: 0px; }
 	p { padding: 0; text-align: justify;}
 }
 
@@ -30,11 +32,11 @@
 
 @media only screen and (max-width: 480px) {
 	ul li { width: 140px; }
-	#w { margin: 0 20px; }
+	#wrapper { margin: 0 0px; }
 }
 
 @media only screen and (max-width: 320px) {
-	#w { margin: 0 10px; }
+	#wrapper { margin: 0 10px; }
 }
 
 /** iPhone only **/

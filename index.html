@@ -10,6 +10,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Rosario:400,400italic,700|Chivo|Shadows+Into+Light' rel='stylesheet' type='text/css'>
   		<link rel="stylesheet" type="text/css" href="css/styles.css">
 		<link rel="stylesheet" type="text/css" href="css/responsive.css">
+		<link rel="stylesheet" type="text/css" href="css/animations.css">
   		<!--[if lt IE 9]>  
 		    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>  
 		    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>  
@@ -20,6 +21,9 @@
 		
 		<!-- latest jQuery direct from google's CDN -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		
+		<!-- Modernizr -->
+		<script type="text/javascript" src="js/modernizr.custom.js"></script>
 		
 		<!-- detect if mobile browser -->
 		<script type="text/javascript" src="js/detectmobilebrowser.js"></script>
@@ -33,6 +37,43 @@
 		
 		<script type="text/javascript">
 			$(document).ready(function() {
+				var language;
+				var animEndEventNames = {
+						'WebkitAnimation' : 'webkitAnimationEnd',
+						'OAnimation' : 'oAnimationEnd',
+						'msAnimation' : 'MSAnimationEnd',
+						'animation' : 'animationend'
+					},
+					// animation end event name
+					animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
+
+				$(".lang").hide();
+
+				if(window.navigator.language || window.navigator.userLanguage == "it")
+					language = "it";
+				else
+					language = "en";
+
+				$("." + language).show();
+				
+				$("#photo-border").on("click", function() {
+					$("#left").addClass("pt-page-moveToLeftFade").on(animEndEventName, function() {
+						$("#left ." + language).hide();
+						$("#left .en").show();
+						$("#left").removeClass("pt-page-moveToLeftFade").addClass("pt-page-moveFromLeftFade").on(animEndEventName, function() {
+							$("#left").removeClass("pt-page-moveFromLeftFade");
+						});
+					});
+
+					$("#right").addClass("pt-page-moveToTopFade").on(animEndEventName, function() {
+						$("#right ." + language).hide();
+						$("#right .en").show();
+						$("#right").removeClass("pt-page-moveToTopFade").addClass("pt-page-moveFromTopFade").on(animEndEventName, function() {
+							$("#right").removeClass("pt-page-moveFromTopFade");
+						});
+					});
+				});
+				
 				if(!jQuery.browser.mobile) {
 					var scrollTimeout;
 
@@ -62,7 +103,10 @@
 				<header class="clearfix">
 				    <div id="info">
 				        <h1><span itemprop="name">Emanuele Biancardi</span></h1>
-				        <h3><span itemprop="jobTitle">Software Developer @ <a href="http://www.eurotraining.it/index.php">Eurotraining Engineering</a></span></h3>
+				        <h3>
+				        	<span class="lang en" itemprop="jobTitle">Software Developer @ <a href="http://www.eurotraining.it/index.php">Eurotraining Engineering</a></span>
+				        	<span class="lang it" itemprop="jobTitle">Sviluppatore Software presso <a href="http://www.eurotraining.it/index.php">Eurotraining Engineering</a></span>
+				        </h3>
 				
 					    <div id="photo">
 					        <a id="photo-border" href="#" title="Myself">
@@ -70,12 +114,18 @@
 					        </a>
 					    </div>
 
-				        <small itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+				        <small class="lang en" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 				          <span itemprop="addressLocality">Sestri Levante</span>,
 				          <span itemprop="addressRegion">Genoa</span>,
 				          <span itemprop="addressCountry">ITALY</span>
 				        </small>
-				        <small><span itemprop="email">biancardi.emanuele@gmail.com</span> (work stuff) <span itemprop="email">goffreder@gmail.com</span> (other stuff)</small>
+				        <small class="lang it" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+				          <span itemprop="addressLocality">Sestri Levante</span>
+				          <span itemprop="addressRegion">(GE)</span>,
+				          <span itemprop="addressCountry">ITALIA</span>
+				        </small>
+				        <small class="lang en"><span itemprop="email">biancardi.emanuele@gmail.com</span> (work stuff) <span itemprop="email">goffreder@gmail.com</span> (other stuff)</small>
+				        <small class="lang it"><span itemprop="email">biancardi.emanuele@gmail.com</span> (lavoro) <span itemprop="email">goffreder@gmail.com</span> (altro)</small>
 				        <small><a href="https://www.facebook.com/goffreder" itemprop="url"><img src="images/icons/balloon-facebook.png" alt="Facebook" itemprop="image" />goffreder</a> • 
 				        	<a href="https://twitter.com/il_samoano" itemprop="url"><img src="images/icons/balloon-twitter.png" alt="Twitter" itemprop="image" />@il_samoano</a></small>
 				    </div>
@@ -83,14 +133,46 @@
 			</div>
 			
 			<div id="right">
-				<section id="profile">
+				<section id="profile" class="lang en">
+					<h2>My History &amp; Profile</h2>
+					<p itemprop="description">I'm a 21 year old web designer and developer working out of eastern Massachusetts. I have been coding websites ever since sophomore year of high school in my first web design class. Fast-forward a few years later I was landing freelance projects most of my junior and senior years. During this time I was also working part-time at Best Buy's Geek Squad division.</p>
+					
+					<p>After graduating High School in summer 2009 I started writing on various web design blogs along with launching my own startup ideas. A few months later in September 2009 I spent a couple months studying at <a href="http://www.wpi.edu/">Worcester Polytechnic Institute</a> in Worcester, Massachsuetts. However I left in January 2010 to pursue a career on my own. I now work doing freelance writing and building side-projects in my spare time.</p>
+				</section>
+				<section id="profile" class="lang it">
 					<h2>My History &amp; Profile</h2>
 					<p itemprop="description">I'm a 21 year old web designer and developer working out of eastern Massachusetts. I have been coding websites ever since sophomore year of high school in my first web design class. Fast-forward a few years later I was landing freelance projects most of my junior and senior years. During this time I was also working part-time at Best Buy's Geek Squad division.</p>
 					
 					<p>After graduating High School in summer 2009 I started writing on various web design blogs along with launching my own startup ideas. A few months later in September 2009 I spent a couple months studying at <a href="http://www.wpi.edu/">Worcester Polytechnic Institute</a> in Worcester, Massachsuetts. However I left in January 2010 to pursue a career on my own. I now work doing freelance writing and building side-projects in my spare time.</p>
 				</section>
 				
-				<section id="skills" class="clearfix" itemscope="" itemtype="http://schema.org/ItemList">
+				<section id="skills" class="clearfix lang en" itemscope="" itemtype="http://schema.org/ItemList">
+					<h2 itemprop="name">Skillset</h2>
+					<section id="skills-left">
+						<h4 itemprop="about">Development</h4>
+						<ul>
+							<li itemprop="itemListElement">HTML5/CSS3</li>
+							<li itemprop="itemListElement">JavaScript &amp; jQuery</li>
+							<li itemprop="itemListElement">PHP Backend</li>
+							<li itemprop="itemListElement">SQL Databases</li>
+							<li itemprop="itemListElement">Wordpress</li>
+							<li itemprop="itemListElement">Pligg CMS</li>
+							<li itemprop="itemListElement">Some Objective-C</li>
+						</ul>
+					</section>
+					
+					<section id="skills-right">
+						<h4 itemprop="about">Software</h4>
+						<ul>
+							<li itemprop="itemListElement">Adobe Photoshop</li>
+							<li itemprop="itemListElement">Adobe Dreamweaver</li>
+							<li itemprop="itemListElement">MS Office 2007-2010</li>
+							<li itemprop="itemListElement">cPanel &amp; phpMyAdmin</li>
+							<li itemprop="itemListElement">Xcode 4</li>
+						</ul>
+					</section>
+				</section>
+				<section id="skills" class="clearfix lang it" itemscope="" itemtype="http://schema.org/ItemList">
 					<h2 itemprop="name">Skillset</h2>
 					<section id="skills-left">
 						<h4 itemprop="about">Development</h4>
@@ -117,19 +199,51 @@
 					</section>
 				</section>
 				
-				<section id="education">
+				<section id="education" class="lang en">
+					<h2>Past Education</h2>
+					<p><span itemprop="alumniOf">Hudson High School</span> graduate of 2009.</p>
+				</section>
+				<section id="education" class="lang it">
 					<h2>Past Education</h2>
 					<p><span itemprop="alumniOf">Hudson High School</span> graduate of 2009.</p>
 				</section>
 				
-				<section id="experience">
+				<section id="experience" class="lang en">
+					<h2>Work Experience</h2>
+					<p>Freelance Web Designer/Developer ~ 2007-2009</p>
+					<p>Best Buy - Geek Squad In-Store Agent ~ 2008-2009</p>
+					<p>Freelance Writer for <span itemprop="worksFor">Hongkiat.com</span> ~ 2011-Present</p>
+				</section>
+				<section id="experience" class="lang it">
 					<h2>Work Experience</h2>
 					<p>Freelance Web Designer/Developer ~ 2007-2009</p>
 					<p>Best Buy - Geek Squad In-Store Agent ~ 2008-2009</p>
 					<p>Freelance Writer for <span itemprop="worksFor">Hongkiat.com</span> ~ 2011-Present</p>
 				</section>
 				
-				<section id="articles">
+				<section id="articles" class="lang en">
+					<h2>Recent Articles</h2>
+					<p itemscope="" itemtype="http://schema.org/Article">
+					<span itemprop="name">
+					<a href="http://www.hongkiat.com/blog/css-javascript-fallback-methods/" itemprop="url" title="10 Useful Fallback Methods For CSS And Javascript">10 Useful Fallback Methods For CSS And Javascript</a></span> • Published in <span itemprop="datePublished">July 2012</span></p>
+					
+					<p itemscope="" itemtype="http://schema.org/Article">
+					<span itemprop="name">
+					<a href="http://www.hongkiat.com/blog/wordpress-url-rewrite/" itemprop="url" title="Rewriting URLs In WordPress: Tips And Plugins">Rewriting URLs In WordPress: Tips And Plugins</a></span> • Published in <span itemprop="datePublished">July 2012</span></p>
+					
+					<p itemscope="" itemtype="http://schema.org/Article">
+					<span itemprop="name">
+					<a href="http://www.hongkiat.com/blog/jpeg-optimization-guide/" itemprop="url" title="JPEG Optimization For The Web – Ultimate Guide">JPEG Optimization For The Web – Ultimate Guide</a></span> • Published in <span itemprop="datePublished">July 2012</span></p>
+					
+					<p itemscope="" itemtype="http://schema.org/Article">
+					<span itemprop="name">
+					<a href="http://www.hongkiat.com/blog/design-perfect-newsletter/" itemprop="url" title="9 Tricks To Design The Perfect HTML Newsletter">9 Tricks To Design The Perfect HTML Newsletter</a></span> • Published in <span itemprop="datePublished">May 2012</span></p>
+					
+					<p itemscope="" itemtype="http://schema.org/Article">
+					<span itemprop="name">
+					<a href="http://www.hongkiat.com/blog/google-website-optimizer-ab-testing-guide/" itemprop="url" title="Guide To A/B Testing With Google Website Optimizer">Guide To A/B Testing With Google Website Optimizer</a></span> • Published in <span itemprop="datePublished">March 2012</span></p>
+				</section>
+				<section id="articles" class="lang it">
 					<h2>Recent Articles</h2>
 					<p itemscope="" itemtype="http://schema.org/Article">
 					<span itemprop="name">
