@@ -35,17 +35,16 @@
 		<!-- the jScrollPane script -->
 		<script type="text/javascript" src="js/jScrollPane/script/jquery.jscrollpane.min.js"></script>
 		
+		<!-- custom javascript for aux functions -->
+		<script type="text/javascript" src="js/script.js"></script>
+		
 		<script type="text/javascript">
 			$(document).ready(function() {
-				var language;
-				var animEndEventNames = {
-						'WebkitAnimation' : 'webkitAnimationEnd',
-						'OAnimation' : 'oAnimationEnd',
-						'msAnimation' : 'MSAnimationEnd',
-						'animation' : 'animationend'
-					},
-					// animation end event name
-					animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
+				var language, newLanguage = "en",
+					leftLeaveAnim = "pt-page-moveToLeft",
+					leftEnterAnim = "pt-page-moveFromLeft",
+					rightLeaveAnim = "pt-page-moveToTop",
+					rightEnterAnim = "pt-page-moveFromTop";
 
 				$(".lang").hide();
 
@@ -57,21 +56,8 @@
 				$("." + language).show();
 				
 				$("#photo-border").on("click", function() {
-					$("#left").addClass("pt-page-moveToLeftFade").on(animEndEventName, function() {
-						$("#left ." + language).hide();
-						$("#left .en").show();
-						$("#left").removeClass("pt-page-moveToLeftFade").addClass("pt-page-moveFromLeftFade").on(animEndEventName, function() {
-							$("#left").removeClass("pt-page-moveFromLeftFade");
-						});
-					});
-
-					$("#right").addClass("pt-page-moveToTopFade").on(animEndEventName, function() {
-						$("#right ." + language).hide();
-						$("#right .en").show();
-						$("#right").removeClass("pt-page-moveToTopFade").addClass("pt-page-moveFromTopFade").on(animEndEventName, function() {
-							$("#right").removeClass("pt-page-moveFromTopFade");
-						});
-					});
+					animation($("#left"), leftLeaveAnim, $("#left"), leftEnterAnim, language, newLanguage);
+					animation($("#right"), rightLeaveAnim, $("#right"), rightEnterAnim, language, newLanguage);
 				});
 				
 				if(!jQuery.browser.mobile) {

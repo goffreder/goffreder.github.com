@@ -3,15 +3,15 @@
 /* move from / to  */
 
 .pt-page-moveToLeft {
-	-webkit-animation: moveToLeft .6s ease both;
-	-moz-animation: moveToLeft .6s ease both;
-	animation: moveToLeft .6s ease both;
+	-webkit-animation: moveToLeft .4s ease both;
+	-moz-animation: moveToLeft .4s ease both;
+	animation: moveToLeft .4s ease both;
 }
 
 .pt-page-moveFromLeft {
-	-webkit-animation: moveFromLeft .6s ease both;
-	-moz-animation: moveFromLeft .6s ease both;
-	animation: moveFromLeft .6s ease both;
+	-webkit-animation: moveFromLeft .4s ease both;
+	-moz-animation: moveFromLeft .4s ease both;
+	animation: moveFromLeft .4s ease both;
 }
 
 .pt-page-moveToRight {
@@ -27,15 +27,15 @@
 }
 
 .pt-page-moveToTop {
-	-webkit-animation: moveToTop .6s ease both;
-	-moz-animation: moveToTop .6s ease both;
-	animation: moveToTop .6s ease both;
+	-webkit-animation: moveToTop .4s ease both;
+	-moz-animation: moveToTop .4s ease both;
+	animation: moveToTop .4s ease both;
 }
 
 .pt-page-moveFromTop {
-	-webkit-animation: moveFromTop .6s ease both;
-	-moz-animation: moveFromTop .6s ease both;
-	animation: moveFromTop .6s ease both;
+	-webkit-animation: moveFromTop .4s ease both;
+	-moz-animation: moveFromTop .4s ease both;
+	animation: moveFromTop .4s ease both;
 }
 
 .pt-page-moveToBottom {
@@ -136,23 +136,23 @@
 /* move from / to  */
 
 @-webkit-keyframes moveToLeft {
-	to { -webkit-transform: translateX(-100%); }
+	to { -webkit-transform: translateX(-150%); }
 }
 @-moz-keyframes moveToLeft {
-	to { -moz-transform: translateX(-100%); }
+	to { -moz-transform: translateX(-150%); }
 }
 @keyframes moveToLeft {
-	to { transform: translateX(-100%); }
+	to { transform: translateX(-150%); }
 }
 
 @-webkit-keyframes moveFromLeft {
-	from { -webkit-transform: translateX(-100%); }
+	from { -webkit-transform: translateX(-150%); }
 }
 @-moz-keyframes moveFromLeft {
-	from { -moz-transform: translateX(-100%); }
+	from { -moz-transform: translateX(-150%); }
 }
 @keyframes moveFromLeft {
-	from { transform: translateX(-100%); }
+	from { transform: translateX(-150%); }
 }
 
 @-webkit-keyframes moveToRight { 
@@ -176,23 +176,23 @@
 }
 
 @-webkit-keyframes moveToTop {
-	to { -webkit-transform: translateY(-100%); }
+	to { -webkit-transform: translateY(-150%); }
 }
 @-moz-keyframes moveToTop {
-	to { -moz-transform: translateY(-100%); }
+	to { -moz-transform: translateY(-150%); }
 }
 @keyframes moveToTop {
-	to { transform: translateY(-100%); }
+	to { transform: translateY(-150%); }
 }
 
 @-webkit-keyframes moveFromTop {
-	from { -webkit-transform: translateY(-100%); }
+	from { -webkit-transform: translateY(-150%); }
 }
 @-moz-keyframes moveFromTop {
-	from { -moz-transform: translateY(-100%); }
+	from { -moz-transform: translateY(-150%); }
 }
 @keyframes moveFromTop {
-	from { transform: translateY(-100%); }
+	from { transform: translateY(-150%); }
 }
 
 @-webkit-keyframes moveToBottom {
