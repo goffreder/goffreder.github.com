@@ -42,9 +42,17 @@
 			$(document).ready(function() {
 				var language, newLanguage = "en",
 					leftLeaveAnim = "pt-page-moveToLeft",
-					leftEnterAnim = "pt-page-moveFromLeft",
+					leftEnterAnim = "pt-page-moveFromRight",
 					rightLeaveAnim = "pt-page-moveToTop",
 					rightEnterAnim = "pt-page-moveFromTop";
+				var animEndEventNames = {
+						'WebkitAnimation' : 'webkitAnimationEnd',
+						'OAnimation' : 'oAnimationEnd',
+						'msAnimation' : 'MSAnimationEnd',
+						'animation' : 'animationend'
+					},
+					// animation end event name
+					animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
 
 				$(".lang").hide();
 
@@ -55,10 +63,14 @@
 
 				$("." + language).show();
 				
-				$("#photo-border").on("click", function() {
-					animation($("#left"), leftLeaveAnim, $("#left"), leftEnterAnim, language, newLanguage);
-					animation($("#right"), rightLeaveAnim, $("#right"), rightEnterAnim, language, newLanguage);
-				});
+				// $("#photo-border").on("click", function() {
+					// $("#left .lang.it").addClass(leftLeaveAnim).on(animEndEventName, function() {
+						// $("#left .lang.it").removeClass(leftLeaveAnim).hide();
+						// $("#left .lang.en").addClass(leftEnterAnim).show().on(animEndEventName, function() {
+							// $("#left .lang.en").removeClass(leftEnterAnim);
+						// });
+					// });
+				// });
 				
 				if(!jQuery.browser.mobile) {
 					var scrollTimeout;
@@ -119,7 +131,8 @@
 			</div>
 			
 			<div id="right">
-				<section id="profile" class="lang en">
+				<img src="images/brace_yourselves.jpg" alt="Brace yourselves, contents are coming.">
+				<!-- <section id="profile" class="lang en">
 					<h2>My History &amp; Profile</h2>
 					<p itemprop="description">I'm a 21 year old web designer and developer working out of eastern Massachusetts. I have been coding websites ever since sophomore year of high school in my first web design class. Fast-forward a few years later I was landing freelance projects most of my junior and senior years. During this time I was also working part-time at Best Buy's Geek Squad division.</p>
 					
@@ -250,7 +263,7 @@
 					<p itemscope="" itemtype="http://schema.org/Article">
 					<span itemprop="name">
 					<a href="http://www.hongkiat.com/blog/google-website-optimizer-ab-testing-guide/" itemprop="url" title="Guide To A/B Testing With Google Website Optimizer">Guide To A/B Testing With Google Website Optimizer</a></span> • Published in <span itemprop="datePublished">March 2012</span></p>
-				</section>
+				</section> -->
 			</div>
 		</div>
 		<div id="footer"></div>
