@@ -7,7 +7,7 @@
 		<meta name="HandheldFriendly" content="true">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-		<link href='http://fonts.googleapis.com/css?family=Rosario:400,400italic,700|Chivo|Shadows+Into+Light' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   		<link rel="stylesheet" type="text/css" href="css/styles.css">
 		<link rel="stylesheet" type="text/css" href="css/responsive.css">
 		<link rel="stylesheet" type="text/css" href="css/animations.css">
@@ -56,9 +56,9 @@
 
 				$(".lang").hide();
 
-				if(window.navigator.language || window.navigator.userLanguage == "it")
-					language = "it";
-				else
+				// if(window.navigator.language || window.navigator.userLanguage == "it")
+					// language = "it";
+				// else
 					language = "en";
 
 				$("." + language).show();
@@ -108,30 +108,43 @@
 				
 					    <div id="photo">
 					        <a id="photo-border" href="#" title="Myself">
-					        	<img src="images/avatar.jpg" alt="Emanuele Biancardi resume photo avatar" itemprop="image" />
+					        	<img src="images/avatar2.jpg" alt="Emanuele Biancardi resume photo avatar" itemprop="image" />
 					        </a>
 					    </div>
 
-				        <small class="lang en" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+				        <!-- <small class="lang en" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+				          <img src="images/icons/iconmonstr-location-11-icon-24.png" alt="Location" itemprop="image" />
 				          <span itemprop="addressLocality">Sestri Levante</span>,
 				          <span itemprop="addressRegion">Genoa</span>,
 				          <span itemprop="addressCountry">ITALY</span>
 				        </small>
 				        <small class="lang it" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+				          <img src="images/icons/iconmonstr-location-11-icon-24.png" alt="Location" itemprop="image" />
 				          <span itemprop="addressLocality">Sestri Levante</span>
 				          <span itemprop="addressRegion">(GE)</span>,
 				          <span itemprop="addressCountry">ITALIA</span>
 				        </small>
-				        <small class="lang en"><span itemprop="email">biancardi.emanuele@gmail.com</span> (work stuff) <span itemprop="email">goffreder@gmail.com</span> (other stuff)</small>
-				        <small class="lang it"><span itemprop="email">biancardi.emanuele@gmail.com</span> (lavoro) <span itemprop="email">goffreder@gmail.com</span> (altro)</small>
-				        <small><a href="https://www.facebook.com/goffreder" itemprop="url"><img src="images/icons/balloon-facebook.png" alt="Facebook" itemprop="image" />goffreder</a> • 
-				        	<a href="https://twitter.com/il_samoano" itemprop="url"><img src="images/icons/balloon-twitter.png" alt="Twitter" itemprop="image" />@il_samoano</a></small>
+				        <small class="lang en"><img src="images/icons/iconmonstr-email-11-icon-24.png" alt="Location" itemprop="image" /><span itemprop="email">biancardi.emanuele@gmail.com</span></small>
+				        <small class="lang it"><img src="images/icons/iconmonstr-email-11-icon-24.png" alt="Location" itemprop="image" /><span itemprop="email">biancardi.emanuele@gmail.com</span></small>
+				        <small><a href="https://www.facebook.com/goffreder" itemprop="url"><img src="images/icons/balloon-facebook.png" alt="Facebook" itemprop="image" />goffreder</a></small>
+				        <small><a href="https://twitter.com/il_samoano" itemprop="url"><img src="images/icons/balloon-twitter.png" alt="Twitter" itemprop="image" />@il_samoano</a></small> -->
+				        
+				        <div id="contact-box">
+				        	<div id="location" class="contact-info">Sestri Levante, Genoa, ITALY</div>
+				        	<div id="mail" class="contact-info">biancardi.emanuele@gmail.com</div>
+				        	<div id="skype" class="contact-info">e.biancardi</div>
+				        	<div id="resume" class="contact-info">My resume</div>
+				        	<div id="linkedin" class="contact-info">Test</div>
+				        	<div id="github" class="contact-info">Test</div>
+				        	<div id="facebook" class="contact-info">Test</div>
+				        	<div id="twitter" class="contact-info">Test</div>
+				       </div>
 				    </div>
 				</header>
 			</div>
 			
 			<div id="right">
-				<img src="images/brace_yourselves.jpg" alt="Brace yourselves, contents are coming.">
+				<img class="placeholder" src="images/brace_yourselves.jpg" alt="Brace yourselves, contents are coming.">
 				<!-- <section id="profile" class="lang en">
 					<h2>My History &amp; Profile</h2>
 					<p itemprop="description">I'm a 21 year old web designer and developer working out of eastern Massachusetts. I have been coding websites ever since sophomore year of high school in my first web design class. Fast-forward a few years later I was landing freelance projects most of my junior and senior years. During this time I was also working part-time at Best Buy's Geek Squad division.</p>

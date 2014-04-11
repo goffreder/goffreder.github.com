@@ -3,26 +3,26 @@
 html { height: 101%; }
 body { background: #f2f2f2 url('../images/background-3.png'); font-size: 62.5%; overflow: hidden;}
 
-h1 { font-family: "Chivo", "Trebuchet MS", Arial, sans-serif; color: #67b7f0; font-size: 2.5em; margin-bottom: 6px; }
-h2 { font-family: "Chivo", "Trebuchet MS", Arial, sans-serif; color: #67b7f0; font-size: 2.0em; margin-bottom: 10px; text-decoration: underline; }
-h3 { font-family: "Trebuchet MS", Verdana, Arial, sans-serif; color: #67b7f0; font-weight: normal; font-size: 1.5em; margin-bottom: 10px; }
-h4 { font-family: "Trebuchet MS", Verdana, Arial, sans-serif; color: #67b7f0; font-weight: bold; font-size: 1.6em; margin-bottom: 4px; }
+h1 { font-family: 'open sans', sans-serif; color: #ffffff; font-size: 2.5em; margin-bottom: 6px;}
+h2 { font-family: 'open sans', sans-serif; color: #67b7f0; font-size: 2.0em; margin-bottom: 10px; text-decoration: underline; }
+h3 { font-family: 'open sans', sans-serif; color: #ffffff; font-weight: normal; font-size: 1.5em; margin-bottom: 10px; }
+h4 { font-family: 'open sans', sans-serif; color: #67b7f0; font-weight: bold; font-size: 1.6em; margin-bottom: 4px; }
 
-p { font-family: "Rosario", serif; color: #C2C2C2; font-size: 1.5em; line-height: 1.4em; margin-bottom: 15px; padding-left: 35px; }
-small { font-family: "Rosario", serif; color: #C2C2C2; font-size: 1.3em; display: inline-block; margin-bottom: 6px; }
+p { font-family: 'open sans', sans-serif; color: #c2c2c2; font-size: 1.5em; line-height: 1.4em; margin-bottom: 15px; padding-left: 35px; }
+small { font-family: 'open sans', sans-serif; color: #ffffff; font-size: 1.3em; display: inline-block; margin-bottom: 6px;}
 ul { display: block; list-style: none; }
-ul li { padding-left: 45px; list-style-type: none; vertical-align: top; background: url('../images/icons/bullet.png') 25px 5px no-repeat; margin-bottom: 5px; font-family: "Rosario", serif; color: #C2C2C2; font-size: 1.4em; line-height: 2.0em; }
+ul li { padding-left: 45px; list-style-type: none; vertical-align: top; background: url('../images/icons/bullet.png') 25px 5px no-repeat; margin-bottom: 5px; font-family: 'open sans', sans-serif; color: #c2c2c2; font-size: 1.4em; line-height: 2.0em; }
 
-img { border: 0; max-width: 100%; /* margin-bottom: 10px; */}
+img { border: 0; max-width: 100%; /* margin-bottom: 10px; */ /* margin-right: 5px; */}
 
-a { color: #5582d6; text-decoration: none; }
+a { color: #dadada; /* text-decoration: none; */ }
 a:hover { text-decoration: underline; }
 
 /** @group core layout **/
 #wrapper { padding: 35px 20px 0px 40px; min-width: 260px; max-width: 1000px; margin: auto; overflow: hidden;}
 
 #left { float: left; width: 260px; padding: 0 20px;}
-#right { float: right; width: 658px; padding: 0 20px 0px 20px; border-left: 2px dashed #67b7f0;}
+#right { float: right; width: 658px; padding: 0 20px 0px 20px; border-left: 2px dashed #dadada;}
 header { width: 100%; }
 
 #footer { height: 35px; }
@@ -38,18 +38,18 @@ display: block;
 width: 150px;
 padding: 10px 10px 5px;
 text-align: center;
-font-family: "Marker Felt", sans-serif;
+font-family: "marker felt", sans-serif;
 text-decoration: none;
 color: #333;
 font-size: 18px;
 -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
 margin: 15px auto 25px;
 }
-#photo-border:after { content: attr(title); font-family: 'Shadows Into Light', cursive; font-weight: bold; font-size: 1.5em; }
+#photo-border:after { font-family: 'shadows into light', cursive; font-weight: bold; font-size: 1.5em; }
 
-.jspContainer .jspVerticalBar { width: 8px;}
-.jspContainer .jspTrack { background: #1B202E; border-radius: 4px;}
-.jspContainer .jspDrag { background: #67b7f0 ; border-radius: 4px;}
+.jspcontainer .jspverticalbar { width: 8px;}
+.jspcontainer .jsptrack { background: #1b202e; border-radius: 4px;}
+.jspcontainer .jspdrag { background: #67b7f0 ; border-radius: 4px;}
 
 /** @group skills **/
 #skills-left { display: block; float: left; margin-right: 30px; }
@@ -61,3 +61,15 @@ margin: 15px auto 25px;
  
 html[xmlns] .clearfix { display: block; }
 * html .clearfix { height: 1%; }
+
+
+/* icons */
+.contact-info { height: 24px; background-repeat: no-repeat; font-family: 'open sans', sans-serif; color: #ffffff; padding-left: 35px; font-size: 1.3em; margin-bottom: 15px; line-height: 24px;}
+#location { background-image: url('../images/icons/iconmonstr-location-11-icon-24.png');}
+#mail { background-image: url('../images/icons/iconmonstr-email-11-icon-24.png'); }
+#skype { background-image: url('../images/icons/iconmonstr-skype-icon-24.png'); }
+#resume { background-image: url('../images/icons/iconmonstr-pdf-file-2-icon-24.png'); }
+#linkedin { background-image: url('../images/icons/iconmonstr-linkedin-icon-24.png'); }
+#github { background-image: url('../images/icons/iconmonstr-github-6-icon-24.png'); }
+#facebook { background-image: url('../images/icons/iconmonstr-facebook-icon-24.png'); }
+#twitter { background-image: url('../images/icons/iconmonstr-twitter-icon-24.png'); }
