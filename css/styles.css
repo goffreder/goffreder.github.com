@@ -26,9 +26,9 @@ body {
 	-webkit-box-shadow : 0 3px 6px rgba(0,0,0,.25);
 	margin : 15px auto 25px;
 }
-#contact-box { width: 95%; margin: auto;}
+#contact-box, #projects { width: 95%; margin: auto;}
 /* icons */
-.contact-info { height: 24px; background-repeat: no-repeat; text-align: left; padding-left: 35px; line-height: 24px;}
+.contact-info, .project { height: 24px; background-repeat: no-repeat; text-align: left; padding-left: 35px; line-height: 24px;}
 #location { background-image: url('../images/icons/iconmonstr-location-11-icon-24.png');}
 #mail { background-image: url('../images/icons/iconmonstr-email-11-icon-24.png'); }
 #skype { background-image: url('../images/icons/iconmonstr-skype-icon-24.png'); }
@@ -37,3 +37,4 @@ body {
 #github { background-image: url('../images/icons/iconmonstr-github-6-icon-24.png'); }
 #facebook { background-image: url('../images/icons/iconmonstr-facebook-icon-24.png'); }
 #twitter { background-image: url('../images/icons/iconmonstr-twitter-icon-24.png'); }
+.js-project { background-image: url('../images/icons/iconmonstr-code-6-icon-24.png'); }
