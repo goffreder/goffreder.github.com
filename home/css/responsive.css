@@ -1,6 +1,6 @@
 @media only screen and (max-width: 480px) {
 	body { font-size: 15px; }
-	a { text-decoration: none; }
+	/*a { text-decoration: none; }*/
 	#main { margin: 10px auto; width: 90%; }
 	#contact-box { width: 100%; }
 }
